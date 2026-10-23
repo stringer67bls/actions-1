@@ -13,7 +13,7 @@ jobs:
       - name: List repository files
         run: ls -ltra
 
-      - name: Executing Shell Script
+      - name: Execute shell script
         run: |
-             chmod +x ascii-script.sh
-            ./ascii-script.sh
+          chmod +x ascii-script.sh
+          ./ascii-script.sh
