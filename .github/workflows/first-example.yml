@@ -16,8 +16,8 @@ jobs:
             ls -lrta
             cat README.md
 
-     - name: Generate ASCII Artwork
-       run: cowsay -f dragon "Run for cover, Iam a DRAGON....RAWR" >>dragon.txt
+      - name: Generate ASCII Artwork
+        run: cowsay -f dragon "Run for cover, Iam a DRAGON....RAWR" >>dragon.txt
 
 
       #- name: List repository files
