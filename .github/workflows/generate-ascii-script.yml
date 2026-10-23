@@ -17,3 +17,24 @@ jobs:
         run: |
           chmod +x .github/workflows/ascii-script.sh
           ./.github/workflows/ascii-script.sh
+
+      - name: Upload dragon artwork
+        uses: actions/upload-artifact@v4
+        with:
+          name: dragon-artwork
+          path: dragon.txt
+
+  test-job:
+    needs: ascii-job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download dragon artwork
+        uses: actions/download-artifact@v4
+        with:
+          name: dragon-artwork
+
+      - name: Test generated file
+        run: |
+          grep -i "dragon" dragon.txt
+          cat dragon.txt
